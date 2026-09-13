@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: var(--font-display);
+  --font-signature: var(--font-signature);
+  --font-body: var(--font-body);
+
+  --color-black: #050505;
+  --color-surface: #101010;
+  --color-white: #ffffff;
+  --color-secondary: #a1a1aa;
+  --color-gold: #c9962e;
+  --color-gold-bright: #e0b04a;
+}
+/* =========================================
+   JAEMS TITLE
+   ========================================= */
+
+.artist-name {
+  position: relative;
+  display: inline-block;
+
+  font-family: "Bebas Neue", "Anton", "Arial Narrow", sans-serif;
+  font-weight: 900;
+
+  color: #f4f4f2;
+
+  letter-spacing: -0.035em;
+  line-height: 0.78;
+
+  transform: scaleX(0.92);
+  transform-origin: center;
+
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.08),
+    0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   JAEMS ENTRANCE
+   ========================================= */
+
+.anim-title {
+  animation: jaemsReveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes jaemsReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) scale(1.16) scaleX(0.92);
+    filter: blur(14px);
+    clip-path: inset(100% 0 0 0);
+  }
+
+  45% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) scaleX(0.92);
+    filter: blur(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+/* =========================================
+   SUBTLE DISTRESSED TEXTURE
+   ========================================= */
+
+.artist-name::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 3px
+    );
+
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+}
+
+.artist-name::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(224, 176, 74, 0.16) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  animation: sheen 4.5s cubic-bezier(0.4, 0, 0.2, 1) 1.8s infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes sheen {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  90%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #050505;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background: rgba(201, 150, 46, 0.35);
+  color: #fff;
+}
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   KEN BURNS (active carousel slide)
+   ========================================= */
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-signature {
+  font-family: var(--font-signature), cursive;
+}
+
+/* =========================================
+   GLASS + GOLD BUTTON PRIMITIVES
+   ========================================= */
+
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.55rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.glass-pill:hover {
+  border-color: rgba(201, 150, 46, 0.7);
+  color: #e0b04a;
+  background: rgba(0, 0, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 150, 46, 0.45);
+  background: rgba(201, 150, 46, 0.1);
+  color: #e0b04a;
+  padding: 0.95rem 2.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: #c9962e;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 0 34px rgba(201, 150, 46, 0.4);
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9962e;
+}
+
+/* Subtle grain texture used over dark backgrounds for a cinematic, non-flat feel */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-bg {
+  animation: fade-in 900ms ease-out both;
+}
+.anim-logo {
+  animation: fade-slide-down 700ms 300ms ease-out both;
+}
+.anim-eyebrow {
+  animation: fade-slide-up 700ms 500ms ease-out both;
+}
+.anim-tagline {
+  animation: fade-slide-up 700ms 920ms ease-out both;
+}
+.anim-label {
+  animation: fade-slide-up 700ms 820ms ease-out both;
+}
+.anim-social {
+  animation: fade-slide-up 700ms 1000ms ease-out both;
+}
+.anim-cta {
+  animation: fade-slide-up 700ms 1150ms ease-out both;
+}
+.anim-footer {
+  animation: fade-in 900ms 1300ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-bg,
+  .anim-logo,
+  .anim-eyebrow,
+  .anim-title,
+  .anim-label,
+  .anim-tagline,
+  .anim-social,
+  .anim-cta,
+  .anim-footer {
+    animation: none !important;
+  }
+
+  .artist-name::before {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
