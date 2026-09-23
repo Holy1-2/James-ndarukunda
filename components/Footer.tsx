@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   FaInstagram,
@@ -8,6 +10,7 @@ import {
   FaSpotify,
 } from "react-icons/fa6";
 import { artist, navLinks, socialLinks, type SocialPlatform } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const iconMap: Record<SocialPlatform, React.ComponentType<{ className?: string }>> = {
   Instagram: FaInstagram,
@@ -19,6 +22,8 @@ const iconMap: Record<SocialPlatform, React.ComponentType<{ className?: string }
 };
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative z-10 border-t border-white/10 bg-black/60 px-6 pb-10 pt-16 text-center">
       <div className="font-signature text-3xl text-white">
@@ -28,7 +33,7 @@ export default function Footer() {
         {artist.surname.toUpperCase()}
       </p>
       <p className="mx-auto mt-5 max-w-sm text-xs italic text-white/50">
-        &ldquo;{artist.tagline}&rdquo;
+        &ldquo;{t("hero.tagline")}&rdquo;
       </p>
 
       <nav className="mt-8 flex flex-wrap justify-center gap-x-7 gap-y-2">
@@ -38,7 +43,7 @@ export default function Footer() {
             href={link.href}
             className="text-xs uppercase tracking-[0.2em] text-white/60 transition-colors duration-300 hover:text-[#e0b04a]"
           >
-            {link.label}
+            {t(link.key)}
           </Link>
         ))}
       </nav>
@@ -62,13 +67,13 @@ export default function Footer() {
       </div>
 
       <div className="mt-10 flex flex-col items-center gap-2 text-[11px] text-white/40">
-        <p>© {new Date().getFullYear()} James Ndarukunda. All rights reserved.</p>
+        <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
         <p className="flex gap-5">
           <span className="cursor-pointer transition-colors hover:text-[#e0b04a]">
-            Privacy Policy
+            {t("footer.privacy")}
           </span>
           <span className="cursor-pointer transition-colors hover:text-[#e0b04a]">
-            Terms of Use
+            {t("footer.terms")}
           </span>
         </p>
       </div>

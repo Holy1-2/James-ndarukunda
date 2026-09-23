@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate apps with their own linting/standards:
+    "server/**",
+    "admin/**",
+    "node_modules/**",
   ]),
 ]);
 

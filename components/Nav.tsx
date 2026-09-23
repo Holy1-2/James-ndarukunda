@@ -5,11 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Link2, Menu, Play, X } from "lucide-react";
 import { artist, navLinks } from "@/lib/data";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -58,29 +61,30 @@ export default function Nav() {
                     : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
           </nav>
 
           <div className="hidden items-center gap-2 lg:flex">
+            <LanguageSwitcher />
             <Link href="/bio" className="glass-pill">
               <Link2 className="h-3.5 w-3.5" />
-              LINKS TO BIO
+              {t("nav.linksToBio")}
             </Link>
             <Link href="/music" className="glass-pill">
               <Play className="h-3.5 w-3.5" />
-              LISTEN TO MUSIC
+              {t("nav.listenToMusic")}
             </Link>
           </div>
 
           <button
             className="glass-pill lg:hidden"
             onClick={() => setOpen((o) => !o)}
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-            <span className="sr-only">Menu</span>
+            <span className="sr-only">{t("nav.menu")}</span>
           </button>
         </div>
       </header>
@@ -100,7 +104,7 @@ export default function Nav() {
                 isActive(link.href) ? "text-[#e0b04a]" : "text-white hover:text-[#e0b04a]"
               }`}
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
         </nav>
@@ -108,12 +112,15 @@ export default function Nav() {
         <div className="mt-10 flex flex-col items-center gap-4">
           <Link href="/bio" className="btn-gold" onClick={() => setOpen(false)}>
             <Link2 className="h-4 w-4" />
-            LINKS TO BIO
+            {t("nav.linksToBio")}
           </Link>
           <Link href="/music" className="btn-gold" onClick={() => setOpen(false)}>
             <Play className="h-4 w-4" />
-            LISTEN TO MUSIC
+            {t("nav.listenToMusic")}
           </Link>
+          <div className="mt-4">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </>

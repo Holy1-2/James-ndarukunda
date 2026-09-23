@@ -3,14 +3,21 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { CSSProperties, TouchEvent as ReactTouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { TranslationKey } from "@/lib/translations";
+import { useLanguage } from "@/components/LanguageProvider";
 
-const PHOTOS = [
-  { src: "/james-images/james-1.jpg", title: "Portrait" },
-  { src: "/james-images/james-2.jpg", title: "Studio Session" },
-  { src: "/james-images/james-3.jpg", title: "Live Performance" },
-  { src: "/james-images/james-4.jpg", title: "Behind the Scenes" },
-  { src: "/james-images/james-5.jpg", title: "In the Studio" },
-  { src: "/james-images/james-6.jpg", title: "On Stage" },
+interface Photo {
+  src: string;
+  key: TranslationKey;
+}
+
+const PHOTOS: Photo[] = [
+  { src: "/james-images/james-1.jpg", key: "photo.1" },
+  { src: "/james-images/james-2.jpg", key: "photo.2" },
+  { src: "/james-images/james-3.jpg", key: "photo.3" },
+  { src: "/james-images/james-4.jpg", key: "photo.4" },
+  { src: "/james-images/james-5.jpg", key: "photo.5" },
+  { src: "/james-images/james-6.jpg", key: "photo.6" },
 ];
 
 const COUNT = PHOTOS.length;
@@ -29,6 +36,7 @@ export default function PhotoCarousel() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const touchX = useRef<number | null>(null);
   const prefersReduced = useRef(false);
+  const { t } = useLanguage();
 
   const [slideW, setSlideW] = useState(0);
   const [active, setActive] = useState(0);
@@ -122,7 +130,7 @@ export default function PhotoCarousel() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photo.src}
-                alt={photo.title}
+                alt={t(photo.key)}
                 draggable={false}
                 className="h-full w-full object-cover scale-105"
               />
@@ -139,7 +147,7 @@ export default function PhotoCarousel() {
                     JAEMS
                   </p>
                   <p className="font-display mt-1 text-xl tracking-wide text-white">
-                    {photo.title.toUpperCase()}
+                    {t(photo.key).toUpperCase()}
                   </p>
                 </div>
               )}
@@ -150,14 +158,14 @@ export default function PhotoCarousel() {
 
       <button
         onClick={goPrev}
-        aria-label="Previous photo"
+        aria-label={t("gallery.prev")}
         className="absolute left-2 top-1/2 z-50 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-[#c9962e] hover:text-[#e0b04a] sm:flex"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
       <button
         onClick={goNext}
-        aria-label="Next photo"
+        aria-label={t("gallery.next")}
         className="absolute right-2 top-1/2 z-50 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-[#c9962e] hover:text-[#e0b04a] sm:flex"
       >
         <ChevronRight className="h-5 w-5" />
@@ -168,7 +176,7 @@ export default function PhotoCarousel() {
           <button
             key={i}
             onClick={() => jumpTo(i)}
-            aria-label={`Go to photo ${i + 1}`}
+            aria-label={t("gallery.goTo", { n: i + 1 })}
             className={`h-1.5 rounded-full transition-all duration-700 ${
               i === active
                 ? "w-10 bg-[#c9962e]"

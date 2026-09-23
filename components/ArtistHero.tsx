@@ -1,10 +1,15 @@
+"use client";
+
 import StageBackground from "@/components/StageBackground";
 import Nav from "@/components/Nav";
 import HeroFooter from "@/components/HeroFooter";
 import SocialLinks from "@/components/SocialLinks";
 import { artist } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ArtistHero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[#050505]">
       <StageBackground />
@@ -22,11 +27,11 @@ export default function ArtistHero() {
         </p>
 
         <p className="anim-label mt-7 text-[10px] font-semibold tracking-[0.42em] text-white/80 uppercase sm:text-xs">
-          {artist.label}
+          {t("hero.label")}
         </p>
 
         <p className="anim-tagline mx-auto mt-5 max-w-md text-center text-sm italic text-white/80 sm:text-base">
-          &ldquo;{artist.tagline}&rdquo;
+          &ldquo;{t("hero.tagline")}&rdquo;
         </p>
 
         <div className="anim-social mt-10 sm:mt-14">
