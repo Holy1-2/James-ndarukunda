@@ -63,7 +63,7 @@ export default function SiteInfo() {
               type="email"
               value={form.contactEmail}
               onChange={(e) => setForm({ ...form, contactEmail: e.target.value })}
-              placeholder="bookings@jaemsndarukunda.com"
+              placeholder="bookings@jamesndarukunda.rw"
             />
           </label>
 

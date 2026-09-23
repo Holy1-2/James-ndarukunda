@@ -12,7 +12,7 @@ import { getSiteInfo } from "@/lib/api";
 export default function ContactContent() {
   const { t } = useLanguage();
 
-  const [contactEmail, setContactEmail] = useState("bookings@jaemsndarukunda.com");
+  const [contactEmail, setContactEmail] = useState("bookings@jamesndarukunda.rw");
   const [contactPhone, setContactPhone] = useState("+250 700 000 000");
   const [based, setBased] = useState<string | null>(null);
   const [availability, setAvailability] = useState<string | null>(null);
