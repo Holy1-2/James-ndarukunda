@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaemsndarukunda.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jamesndarukunda.rw";
 
 export const ARTIST_FULL_NAME = "James Ndarukunda";
 

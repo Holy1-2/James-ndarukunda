@@ -246,7 +246,7 @@ export const rw: Record<TranslationKey, string> = {
   "nav.about": "Ibyerekeye",
   "nav.music": "Umuziki",
   "nav.gallery": "Galeri",
-  "nav.events": "Ibikorwa",
+  "nav.events": "Ibitaramo",
   "nav.contact": "Twandikire",
   "nav.linksToBio": "BIO",
   "nav.listenToMusic": "UMUZIKI",
@@ -288,7 +288,7 @@ export const rw: Record<TranslationKey, string> = {
   "music.newUpload": "Umutangizo",
   "music.views": "ababirebye",
 
-  "events.eyebrow": "Ibikorwa",
+  "events.eyebrow": "Ibitaramo",
   "events.heading": "Ibikorwa n'ibitaramo bizaza",
   "events.desc":
     "Aho James azakorera ubutaha — ibitaramo, festivals n'ibindi.",
