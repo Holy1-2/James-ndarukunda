@@ -167,7 +167,7 @@ export default function PhotoGallery() {
             />
             <figcaption className="text-center">
               <p className="text-[10px] tracking-[0.3em] text-[#e0b04a]">
-                JAEMS · {String(lightbox + 1).padStart(2, "0")} /{" "}
+                JAMES · {String(lightbox + 1).padStart(2, "0")} /{" "}
                 {String(photos.length).padStart(2, "0")}
               </p>
               <p className="font-display mt-1 text-2xl tracking-wide text-white">

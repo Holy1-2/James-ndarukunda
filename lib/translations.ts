@@ -30,7 +30,7 @@ export const en = {
     "Poetry that preserves culture and delivers meaningful messages.",
 
   "about.eyebrow": "About the Artist",
-  "about.eyebrowJaems": "About Jaems",
+  "about.eyebrowJaems": "About James",
   "about.heading1": "The Journey, The Music,",
   "about.heading2": "The Mission.",
   "about.story1":
@@ -145,7 +145,7 @@ export const fr: Record<TranslationKey, string> = {
     "Une poésie qui préserve la culture et porte des messages porteurs de sens.",
 
   "about.eyebrow": "À propos de l'artiste",
-  "about.eyebrowJaems": "À propos de Jaems",
+  "about.eyebrowJaems": "À propos de James",
   "about.heading1": "Le parcours, la musique,",
   "about.heading2": "la mission.",
   "about.story1":
@@ -259,7 +259,7 @@ export const rw: Record<TranslationKey, string> = {
     "Ibisigo bibungabunga umuco kandi bitanga ubutumwa .",
 
   "about.eyebrow": "Ibyerekeye Umuhanzi",
-  "about.eyebrowJaems": "Ibyerekeye Jaems",
+  "about.eyebrowJaems": "Ibyerekeye james",
   "about.heading1": "Urugendo, umuziki,",
   "about.heading2": "n'ubutumwa.",
   "about.story1":
@@ -285,7 +285,7 @@ export const rw: Record<TranslationKey, string> = {
   "music.heading2": "Indirimbo Nshya",
   "music.desc": "Amashusho n'indirimbo nshya, bituruka kuri chaneli.",
   "music.viewAll": "REBA BYOSE KURI YOUTUBE",
-  "music.newUpload": "Umutangizo",
+  "music.newUpload": "Iziheruka",
   "music.views": "ababirebye",
 
   "events.eyebrow": "Ibitaramo",

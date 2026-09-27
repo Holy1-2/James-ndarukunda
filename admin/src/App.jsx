@@ -20,7 +20,7 @@ function RequireAuth() {
 
 export default function App() {
   useEffect(() => {
-    document.title = "Jaems — Admin Panel";
+    document.title = "James — Admin Panel";
   }, []);
 
   return (

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "James Ndarukunda",
-    "Jaems",
+    "James",
     "Rwandan artist",
     "Rwandan poet",
     "ibisigo",

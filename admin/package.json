@@ -1,7 +1,7 @@
 {
   "name": "jaems-admin",
   "version": "1.0.0",
-  "description": "Jaems artist site — admin panel (React). Consumes the shared Express/MongoDB API.",
+  "description": "James artist site — admin panel (React). Consumes the shared Express/MongoDB API.",
   "type": "module",
   "private": true,
   "scripts": {

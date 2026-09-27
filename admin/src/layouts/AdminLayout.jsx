@@ -23,7 +23,7 @@ export default function AdminLayout() {
         <div className="brand">
           <span className="brand-mark">J</span>
           <div>
-            <strong>JAEMS</strong>
+            <strong>JAMES</strong>
             <small>Admin Panel</small>
           </div>
         </div>

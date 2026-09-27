@@ -144,7 +144,7 @@ export default function PhotoCarousel() {
               {isCenter && (
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-6 pb-6 text-left">
                   <p className="text-[10px] tracking-[0.3em] text-[#e0b04a]">
-                    JAEMS
+                    JAMES
                   </p>
                   <p className="font-display mt-1 text-xl tracking-wide text-white">
                     {t(photo.key).toUpperCase()}
