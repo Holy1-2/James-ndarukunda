@@ -280,8 +280,8 @@ export const rw: Record<TranslationKey, string> = {
 
   "cta.listen": "TEGA AMATWI UMUZIKI WANJYE",
 
-"music.eyebrow": "Umuziki mushya",
-  "music.heading1": "Mutege amatwi",
+"music.eyebrow": "Ibihangano Bishya",
+  "music.heading1": "Umva Ibihangano",
   "music.heading2": "Indirimbo Nshya",
   "music.desc": "Amashusho n'indirimbo nshya, bituruka ku murongo wa youtube.",
   "music.viewAll": "REBA BYOSE KURI YOUTUBE",
