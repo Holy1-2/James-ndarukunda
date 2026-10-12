@@ -42,11 +42,11 @@ export const artist = {
   firstName: "James",
   surname: "Ndarukunda",
 
-  label: "Rwandan Poet & Founder",
+  label: "Rwandan Poet ",
   tagline: "Poetry that preserves culture and delivers meaningful messages.",
 
   shortBio:
-    "James Ndarukunda is a Rwandan poet and the Founder and Owner of IMIKARAGO POETS GROUP. Since 2021, he has been creating and performing ibisigo (poetry) that deliver messages through different themes and perspectives. His work is centered on preserving and promoting Rwandan culture and literary heritage.",
+    "James Ndarukunda is a Rwandan  and the Founder and Owner of IMIKARAGO POETS GROUP. Since 2021, he has been creating and performing ibisigo (poetry) that deliver messages through different themes and perspectives. His work is centered on preserving and promoting Rwandan culture and literary heritage.",
 
   history: [
     {
