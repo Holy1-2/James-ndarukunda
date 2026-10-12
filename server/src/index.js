@@ -40,12 +40,12 @@ async function main() {
 
   const app = express();
 
-  const origins = (process.env.CORS_ORIGINS ?? "http://localhost:3000,http://localhost:5173")
-    .split(",")
-    .map((o) => o.trim())
-    .filter(Boolean);
-
-  app.use(cors({ origin: origins.length ? origins : true }));
+ app.use(cors({
+  origin: true,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
   app.use(express.json({ limit: "1mb" }));
 
   app.use("/uploads", express.static(UPLOAD_DIR));
