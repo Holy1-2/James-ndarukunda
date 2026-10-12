@@ -26,7 +26,7 @@ function Brand() {
     <div className="brand">
       <span className="brand-mark">J</span>
       <div className="brand-text">
-        <strong>JAEMS</strong>
+        <strong>JAMES</strong>
         <small>Admin Panel</small>
       </div>
     </div>

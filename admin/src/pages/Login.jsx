@@ -35,7 +35,7 @@ export default function Login() {
       <section className="login-visual">
         <span className="brand-mark">J</span>
         <h2>
-          Manage <span className="text-gold">JAEMS</span> with confidence.
+          Manage <span className="text-gold">JAMES</span> with confidence.
         </h2>
         <p>
           A single control center for your site — track visitors, reply to
