@@ -1,8 +1,9 @@
 import axios from "axios";
 
-const configured = /^https?:\/\//.test(import.meta.env.VITE_API_URL ?? "");
+// Change this line to use Next.js process.env instead of Vite's import.meta
+const configured = /^https?:\/\//.test(process.env.NEXT_PUBLIC_API_URL ?? "");
 
-export const API_BASE = configured ? import.meta.env.VITE_API_URL : "";
+export const API_BASE = configured ? process.env.NEXT_PUBLIC_API_URL : "";
 
 export const api = axios.create({
   baseURL: API_BASE,
@@ -19,7 +20,7 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("jaems_admin_token");
-      if (window.location.pathname !== "/login") {
+      if (typeof window !== "undefined" && window.location.pathname !== "/login") {
         window.location.href = "/login";
       }
     }
