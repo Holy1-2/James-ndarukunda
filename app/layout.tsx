@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Dancing_Script, Manrope } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     template: `%s | ${ARTIST_FULL_NAME}`,
   },
   description,
+  applicationName: ARTIST_FULL_NAME,
   keywords: [
     "James Ndarukunda",
     "James",
@@ -51,6 +52,20 @@ export const metadata: Metadata = {
   creator: ARTIST_FULL_NAME,
   publisher: ARTIST_FULL_NAME,
   category: "music",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: ARTIST_FULL_NAME,
+    capable: true,
+  },
   robots: {
     index: true,
     follow: true,
@@ -84,6 +99,11 @@ export const metadata: Metadata = {
     description,
     images: [OG_IMAGE],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050505",
+  colorScheme: "dark",
 };
 
 const jsonLd = {

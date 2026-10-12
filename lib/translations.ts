@@ -305,7 +305,7 @@ export const rw: Record<TranslationKey, string> = {
   "gallery.close": "Funga",
   "gallery.open": "Fungura {title}",
   "gallery.goTo": "Kuri ifoto {n}",
-  "gallery.loading": "Birimo kupakira amafoto…",
+  "gallery.loading": "Amafoto arikuza ...",
   "gallery.empty":
     "Nta mafoto ubu — galeri irimo kuzuzwa. Garuka vuba.",
 

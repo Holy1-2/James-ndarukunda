@@ -1,0 +1,28 @@
+{
+  "name": "James Ndarukunda",
+  "short_name": "Ndarukunda",
+  "description": "James Ndarukunda is a Rwandan poet and the founder of IMIKARAGO POETS GROUP. Poetry that preserves culture and delivers meaningful messages.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "categories": ["music", "entertainment", "art"],
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
