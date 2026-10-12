@@ -82,7 +82,7 @@ export default function AdminLayout() {
         <div className="side-footer">
           <a
             className="side-link"
-            href="http://localhost:3000"
+            href="https://www.jamesndarukunda.rw/"
             target="_blank"
             rel="noreferrer"
           >
@@ -114,7 +114,7 @@ export default function AdminLayout() {
           <div className="topbar-actions">
             <a
               className="topbar-link"
-              href="http://localhost:3000"
+              href="https://www.jamesndarukunda.rw/"
               target="_blank"
               rel="noreferrer"
             >
