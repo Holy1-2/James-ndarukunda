@@ -294,7 +294,7 @@ export const rw: Record<TranslationKey, string> = {
     "Aho James azakorera ubutaha — ibitaramo, festivals n'ibindi.",
   "events.empty":
     "Nta bikorwa bizaza ubungubu — mugaruke kugira umenye amatariki mashya.",
-  "events.tickets": "Bitiketi n'amakuru",
+  "events.tickets": "Gura Itike",
 
   "gallery.eyebrow": "Galeri",
   "gallery.heading": "Ibihe n'Uburanga",
