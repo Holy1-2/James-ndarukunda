@@ -53,7 +53,12 @@ async function main() {
   app.get("/api/health", (_req, res) => {
     res.json({ status: "ok", uptime: process.uptime() });
   });
-
+ app.get("/", (_req, res) => {
+    res.json({ 
+      message: "Jaems Artist Server Backend API is running successfully!",
+      health_check: "/api/health" 
+    });
+  });
   app.use("/api/auth", authRouter);
   app.use("/api/contacts", contactRouter);
   app.use("/api/events", eventRouter);
