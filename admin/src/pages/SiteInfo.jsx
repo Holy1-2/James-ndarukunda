@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CheckIcon } from "@heroicons/react/24/outline";
 import { api, errMessage } from "../api/client.js";
 import { Header, PageLoading } from "./Dashboard.jsx";
 
@@ -99,6 +100,7 @@ export default function SiteInfo() {
 
           <div>
             <button className="btn btn-primary" type="submit" disabled={saving}>
+              <CheckIcon className="icon-16" />
               {saving ? "Saving…" : "Save changes"}
             </button>
           </div>

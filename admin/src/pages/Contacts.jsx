@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import {
+  ArrowPathIcon,
+  EnvelopeIcon,
+  EnvelopeOpenIcon,
+  PaperAirplaneIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import { api, errMessage } from "../api/client.js";
 import { Empty, Header, PageLoading } from "./Dashboard.jsx";
 
@@ -67,6 +74,7 @@ export default function Contacts() {
         subtitle={`Messages from the site contact form — ${contacts.filter((c) => !c.read).length} unread.`}
         actions={
           <button className="btn btn-ghost" onClick={load} type="button">
+            <ArrowPathIcon className="icon-16" />
             Refresh
           </button>
         }
@@ -110,21 +118,28 @@ export default function Contacts() {
                     <div className="row-actions">
                       <button
                         type="button"
-                        className="btn btn-ghost"
+                        className="btn btn-ghost btn-sm"
                         disabled={busy === contact._id}
                         onClick={() => toggleRead(contact)}
                       >
+                        {contact.read ? (
+                          <EnvelopeIcon className="icon-14" />
+                        ) : (
+                          <EnvelopeOpenIcon className="icon-14" />
+                        )}
                         Mark as {contact.read ? "unread" : "read"}
                       </button>
-                      <a className="btn btn-ghost" href={`mailto:${contact.email}`}>
+                      <a className="btn btn-ghost btn-sm" href={`mailto:${contact.email}`}>
+                        <PaperAirplaneIcon className="icon-14" />
                         Reply
                       </a>
                       <button
                         type="button"
-                        className="btn btn-danger"
+                        className="btn btn-danger btn-sm"
                         disabled={busy === contact._id}
                         onClick={() => remove(contact)}
                       >
+                        <TrashIcon className="icon-14" />
                         Delete
                       </button>
                     </div>

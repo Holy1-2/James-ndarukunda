@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import {
+  ArrowPathIcon,
+  ArrowUpTrayIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import { api, API_BASE, errMessage } from "../api/client.js";
 import { Empty, Header, PageLoading } from "./Dashboard.jsx";
 
@@ -74,6 +79,7 @@ export default function Gallery() {
         subtitle="Images shown on the main gallery page."
         actions={
           <button className="btn btn-ghost" onClick={load} type="button">
+            <ArrowPathIcon className="icon-16" />
             Refresh
           </button>
         }
@@ -103,6 +109,7 @@ export default function Gallery() {
             />
           </label>
           <button className="btn btn-primary" type="submit" disabled={saving || !file}>
+            <ArrowUpTrayIcon className="icon-16" />
             {saving ? "Uploading…" : "Upload"}
           </button>
         </form>
@@ -125,6 +132,7 @@ export default function Gallery() {
                   disabled={busy === image._id}
                   onClick={() => remove(image)}
                 >
+                  <TrashIcon className="icon-14" />
                   Remove
                 </button>
               </figcaption>

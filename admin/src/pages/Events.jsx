@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import {
+  EyeIcon,
+  EyeSlashIcon,
+  PencilSquareIcon,
+  PlusIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import { api, errMessage } from "../api/client.js";
 import { Empty, Header, PageLoading } from "./Dashboard.jsx";
 
@@ -124,7 +131,8 @@ export default function Events() {
         subtitle="Upcoming shows and events shown on the main site."
         actions={
           <button className="btn btn-primary" onClick={openCreate} type="button">
-            + New event
+            <PlusIcon className="icon-16" />
+            New event
           </button>
         }
       />
@@ -166,6 +174,7 @@ export default function Events() {
                   <td className="num">
                     <div className="row-actions">
                       <button type="button" className="btn btn-ghost btn-sm" onClick={() => openEdit(event)}>
+                        <PencilSquareIcon className="icon-14" />
                         Edit
                       </button>
                       <button
@@ -174,6 +183,11 @@ export default function Events() {
                         disabled={busy === event._id}
                         onClick={() => togglePublish(event)}
                       >
+                        {event.published ? (
+                          <EyeSlashIcon className="icon-14" />
+                        ) : (
+                          <EyeIcon className="icon-14" />
+                        )}
                         {event.published ? "Hide" : "Show"}
                       </button>
                       <button
@@ -182,6 +196,7 @@ export default function Events() {
                         disabled={busy === event._id}
                         onClick={() => remove(event)}
                       >
+                        <TrashIcon className="icon-14" />
                         Delete
                       </button>
                     </div>

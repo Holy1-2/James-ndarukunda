@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  CalendarDaysIcon,
+  ChartBarSquareIcon,
+  PhotoIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline";
 import { api, errMessage, setToken } from "../api/client.js";
 
 export default function Login() {
@@ -26,11 +32,40 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <section className="login-visual">
+        <span className="brand-mark">J</span>
+        <h2>
+          Manage <span className="text-gold">JAEMS</span> with confidence.
+        </h2>
+        <p>
+          A single control center for your site — track visitors, reply to
+          messages, publish events and curate the gallery.
+        </p>
+        <div className="login-features">
+          <div className="login-feature">
+            <ChartBarSquareIcon className="side-icon" />
+            Real-time visitor analytics
+          </div>
+          <div className="login-feature">
+            <CalendarDaysIcon className="side-icon" />
+            Publish and schedule events
+          </div>
+          <div className="login-feature">
+            <PhotoIcon className="side-icon" />
+            Curate the photo gallery
+          </div>
+          <div className="login-feature">
+            <ShieldCheckIcon className="side-icon" />
+            Secure, token-based access
+          </div>
+        </div>
+      </section>
+
       <form className="login-card" onSubmit={submit}>
         <div className="login-head">
           <span className="brand-mark">J</span>
-          <h1>JAEMS Admin</h1>
-          <p>Sign in to manage the site.</p>
+          <h1>Welcome back</h1>
+          <p>Sign in to your admin panel.</p>
         </div>
 
         {error && <div className="alert alert-error">{error}</div>}
@@ -44,6 +79,7 @@ export default function Login() {
             onChange={(e) => setUsername(e.target.value)}
             required
             autoFocus
+            placeholder="admin"
           />
         </label>
 
@@ -55,6 +91,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="••••••••"
           />
         </label>
 
