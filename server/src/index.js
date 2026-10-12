@@ -55,7 +55,7 @@ async function main() {
   });
  app.get("/", (_req, res) => {
     res.json({ 
-      message: "Jaems Artist Server Backend API is running successfully!",
+      message: "James Artist Server Backend API is running successfully!",
       health_check: "/api/health" 
     });
   });
