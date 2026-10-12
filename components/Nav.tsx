@@ -78,48 +78,60 @@ export default function Nav() {
             </Link>
           </div>
 
-          <button
-            className="glass-pill lg:hidden"
-            onClick={() => setOpen((o) => !o)}
-            aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
-          >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-            <span className="sr-only">{t("nav.menu")}</span>
-          </button>
+          <div className="lg:hidden">
+            <button
+              className="glass-pill"
+              onClick={() => setOpen((o) => !o)}
+              aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
+              aria-expanded={open}
+            >
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              <span className="sr-only">{t("nav.menu")}</span>
+            </button>
+          </div>
         </div>
       </header>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-[#050505]/95 backdrop-blur-xl transition-opacity duration-500 ${
+        className={`fixed inset-0 z-40 overflow-y-auto bg-[#050505]/97 backdrop-blur-xl transition-opacity duration-500 lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <nav className="flex flex-col items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className={`font-display px-6 py-2.5 text-3xl tracking-[0.15em] uppercase transition-colors duration-300 ${
-                isActive(link.href) ? "text-[#e0b04a]" : "text-white hover:text-[#e0b04a]"
-              }`}
-            >
-              {t(link.key)}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex min-h-full flex-col items-center justify-center gap-6 px-6 pb-10 pt-24">
+          <LanguageSwitcher />
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <Link href="/bio" className="btn-gold" onClick={() => setOpen(false)}>
-            <Link2 className="h-4 w-4" />
-            {t("nav.linksToBio")}
-          </Link>
-          <Link href="/music" className="btn-gold" onClick={() => setOpen(false)}>
-            <Play className="h-4 w-4" />
-            {t("nav.listenToMusic")}
-          </Link>
-          <div className="mt-4">
-            <LanguageSwitcher />
+          <nav className="flex flex-col items-center">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`font-display px-5 py-1.5 text-2xl tracking-[0.14em] uppercase transition-colors duration-300 sm:text-3xl ${
+                  isActive(link.href) ? "text-[#e0b04a]" : "text-white hover:text-[#e0b04a]"
+                }`}
+              >
+                {t(link.key)}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex w-full max-w-xs flex-col items-stretch gap-3">
+            <Link
+              href="/bio"
+              className="btn-gold w-full"
+              onClick={() => setOpen(false)}
+            >
+              <Link2 className="h-4 w-4" />
+              {t("nav.linksToBio")}
+            </Link>
+            <Link
+              href="/music"
+              className="btn-gold w-full"
+              onClick={() => setOpen(false)}
+            >
+              <Play className="h-4 w-4" />
+              {t("nav.listenToMusic")}
+            </Link>
           </div>
         </div>
       </div>

@@ -283,7 +283,7 @@ export const rw: Record<TranslationKey, string> = {
 "music.eyebrow": "Umuziki mushya",
   "music.heading1": "Mutege amatwi",
   "music.heading2": "Indirimbo Nshya",
-  "music.desc": "Amashusho n'indirimbo nshya, bituruka kuri chaneli.",
+  "music.desc": "Amashusho n'indirimbo nshya, bituruka ku murongo wa youtube.",
   "music.viewAll": "REBA BYOSE KURI YOUTUBE",
   "music.newUpload": "Iziheruka",
   "music.views": "ababirebye",
